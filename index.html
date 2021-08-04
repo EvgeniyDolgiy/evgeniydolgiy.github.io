@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Dybrovnik</title>
+		<style>
+			.container {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			.image {
+				flex: 1 1 auto;
+			}
+			.image img {
+				width: 100%;
+			}
+			.foresight {
+				width: 100vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="image">
+				<img
+					id="left"
+					src="images/1-1.jpg"
+					alt=""
+				/>
+			</div>
+			<div class="image">
+				<img
+					id="right"
+					src="images/1-2.jpg"
+					alt=""
+				/>
+			</div>
+			<div id="foresight" class="foresight">Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Quas, quidem officia corporis accusamus illo asperiores expedita soluta pariatur sint omnis odio iure, excepturi, necessitatibus! Deleniti temporibus veritatis dolor quidem repellat.</div>
+		</div>
+	</body>
+	<script>
+		let imageLeft = ['1-1.jpg', '2-1.jpg'];
+		let imageRight = ['1-2.jpg', '2-2.jpg'];
+		let foresightTextArray = ['Lorem 1', 'Lorem 2', 'Lorem 3'];
+
+		let elementLeft = document.getElementById('left');
+		let elementRight = document.getElementById('right');
+		let foresight = document.getElementById('foresight');
+
+		let randomItemLeft = imageLeft[Math.floor(Math.random()*imageLeft.length)];
+		let randomItemRight = imageRight[Math.floor(Math.random()*imageRight.length)];
+		let foresightText = foresightTextArray[Math.floor(Math.random()*foresightTextArray.length)];
+
+		elementLeft.setAttribute('src', `images/${randomItemLeft}`);
+		elementRight.setAttribute('src', `images/${randomItemRight}`);
+		foresight.innerHTML = foresightText;
+
+		console.log('imageLeft', imageLeft, elementLeft);
+		console.log('imageRight', imageRight, elementRight);
+	</script>
+</html>
